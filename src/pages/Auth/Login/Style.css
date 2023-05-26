@@ -1,0 +1,73 @@
+.auth-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  width: 60%;
+}
+
+@media (max-width: 1100px) {
+  .auth-form {
+    width: 100%;
+  }
+}
+
+.auth-form div {
+  width: 100%;
+}
+
+#togglePassword {
+  width: 2.5rem;
+  position: absolute;
+  margin-top: 1.75rem;
+  margin-left: -4.5rem;
+  cursor: pointer;
+}
+
+.auth-form label {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.auth-form input {
+  border-radius: 2rem;
+  border: 0;
+  box-shadow: 0 6px 12px rgba(128, 128, 128, 0.5);
+  padding: 1.75rem 3rem 1.75rem 3rem;
+  font-size: 1.5rem;
+  color: #6b6b6be8;
+  width: 100%;
+  outline: 0;
+}
+
+.checkbox {
+  align-self: flex-start;
+}
+
+.checkbox input {
+  width: unset;
+  height: unset;
+  cursor: pointer;
+}
+
+.checkbox label {
+  font-weight: 100;
+  color: #6b6b6be8;
+  margin-left: 1rem;
+}
+
+.auth-form button {
+  padding: 1.5rem 5rem 1.5rem 5rem;
+  border-radius: 1rem;
+  border: 0;
+  box-shadow: 0 6px 12px rgba(128, 128, 128, 0.5);
+  background-color: #ebfffb;
+  font-size: 1.5rem;
+  color: #4aa592;
+  cursor: pointer;
+}

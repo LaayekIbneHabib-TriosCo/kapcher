@@ -1,0 +1,30 @@
+.MuiTablePagination-selectLabel {
+  font-size: 15px !important;
+}
+
+.MuiTablePagination-displayedRows {
+  font-size: 15px !important;
+}
+
+.MuiButtonBase-root svg {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper {
+  width: 100px !important;
+  margin-top: 10px !important;
+}
+
+.css-10by3a5-MuiButtonBase-root-MuiMenuItem-root-MuiTablePagination-menuItem {
+  font-size: 15px !important;
+}
+
+.css-194a1fa-MuiSelect-select-MuiInputBase-input {
+  border-radius: 10px !important;
+  background-color: rgba(84, 192, 169, 0.5) !important;
+  width: 50px !important;
+  font-size: 15px !important;
+  padding-top: 15px !important;
+  padding-right: 45px !important;
+}
