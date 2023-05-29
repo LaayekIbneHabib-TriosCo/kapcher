@@ -16,29 +16,45 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const { isClicked, setIsClicked } = useStateContext();
 
-  const navigate = useNavigate();
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const isAdmin = credentials[0].name === username && credentials[0].password === password;
     const isSecurity = credentials[1].name === username && credentials[1].password === password;
     const isPacker = credentials[2].name === username && credentials[2].password === password;
+
     if (isAdmin) {
-      localStorage.setItem("isAdmin", true);
+      localStorage.setItem("userType", "admin");
       navigate("/dashboardforadmin");
     } else if (isSecurity) {
-      localStorage.setItem("isSecurity", true);
+      localStorage.setItem("userType", "security");
       navigate("/dashboardforsecurity");
     } else if (isPacker) {
-      localStorage.setItem("isPacker", true);
+      localStorage.setItem("userType", "packer");
       navigate("/dashboardforpacker");
+    } else {
+      alert("Wrong Credentials");
     }
   };
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    let login = localStorage.getItem("isAdmin");
-    if (login) {
-      navigate("/dashboardforadmin");
+    let userType = localStorage.getItem("userType");
+    if (userType) {
+      switch (userType) {
+        case "admin":
+          navigate("/dashboardforadmin");
+          break;
+        case "security":
+          navigate("/dashboardforsecurity");
+          break;
+        case "packer":
+          navigate("/dashboardforpacker");
+          break;
+        default:
+          navigate("/login");
+          break;
+      }
     }
   });
 
@@ -66,8 +82,7 @@ export default function Login() {
           }}
         >
           <div className="auth-logo">
-            <img src="assets/brand-logo.svg" alt="" />
-            <img src="assets/brand-name.svg" alt="" />
+            <img src="assets/new-logo.png" width="100%" alt="" />
           </div>
           <form onSubmit={handleSubmit} className="auth-form" action="POST">
             <div>

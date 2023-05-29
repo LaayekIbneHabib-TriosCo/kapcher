@@ -4,13 +4,14 @@ import { useNavigate } from "react-router-dom";
 export default function ProtectedRoutes(props) {
   const { Component } = props;
 
-  const naviagte = useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
-    let login = localStorage.getItem("isAdmin");
-    if (!login) {
-      naviagte("/login");
+    let userType = localStorage.getItem("userType");
+
+    if (!userType) {
+      navigate("/login");
     }
-  });
+  }, [navigate]);
 
   return <Component />;
 }

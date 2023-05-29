@@ -19,15 +19,18 @@ export default function App() {
         <Route path="*" element={<h1>404</h1>} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboardforadmin" element={<ProtectedRoutes Component={Dashboard} />} />
-        <Route path="/dashboardforsecurity" element={<Dashboard />} />
-        <Route path="/dashboardforpacker" element={<Packer />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/livestream" element={<LiveStream />} />
-        <Route path="/livestreamforsecurity" element={<LiveStream />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/settings/cameras" element={<Cameras />} />
-        <Route path="/settings/workstations" element={<Workstations />} />
-        <Route path="/video" element={<Video />} />
+        <Route path="/dashboardforsecurity" element={<ProtectedRoutes Component={Dashboard} />} />
+        <Route path="/dashboardforpacker" element={<ProtectedRoutes Component={Packer} />} />
+        <Route path="/users" element={<ProtectedRoutes Component={Users} />} />
+        <Route path="/livestream" element={<ProtectedRoutes Component={LiveStream} />} />
+        <Route path="/livestreamforsecurity" element={<ProtectedRoutes Component={LiveStream} />} />
+        <Route path="/settings" element={<ProtectedRoutes Component={Settings} />} />
+        <Route path="/settings/cameras" element={<ProtectedRoutes Component={Cameras} />} />
+        <Route
+          path="/settings/workstations"
+          element={<ProtectedRoutes Component={Workstations} />}
+        />
+        <Route path="/video" element={<ProtectedRoutes Component={Video} />} />
       </Routes>
     </>
   );

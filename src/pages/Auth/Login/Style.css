@@ -1,6 +1,8 @@
 .auth-logo {
   display: flex;
   justify-content: center;
+  max-width: 40rem;
+  margin-bottom: 5rem;
 }
 
 .auth-form {

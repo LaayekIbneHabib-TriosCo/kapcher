@@ -40,7 +40,6 @@ export default function Sidenav() {
             <img src="assets/burger-icon.svg" alt="" />
           </BurgerIcon>
         </Header>
-
         <Menu>
           {(path === "/dashboardforadmin" ||
             path === "/users" ||
@@ -136,10 +135,17 @@ export default function Sidenav() {
                   }
                   alt=""
                 />
-                <Label sx={{ display: toggled.display }}>Packers Dashboard</Label>
+                <Label sx={{ display: toggled.display }}>Dashboard</Label>
               </Item>
             </StyledLink>
           )}
+
+          <StyledLink to="/login">
+            <Item onClick={() => localStorage.clear()}>
+              <img src="assets/logout.svg" alt="" />
+              <Label sx={{ display: toggled.display }}>Logout</Label>
+            </Item>
+          </StyledLink>
         </Menu>
       </Container>
     </>

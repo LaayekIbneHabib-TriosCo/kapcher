@@ -23,5 +23,4 @@ export const Filter = styled(Grid)(({}) => ({
   justifyContent: "center",
   alignItems: "center",
   minWidth: "25rem",
-  // background: "red",
 }));
