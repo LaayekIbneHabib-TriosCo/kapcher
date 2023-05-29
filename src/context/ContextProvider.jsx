@@ -9,13 +9,10 @@ const initialState = {
 export const ContextProvider = ({ children }) => {
   const [sidenavOpen, setSidenavOpen] = useState(false);
   const [isClicked, setIsClicked] = useState(initialState);
-  const [formData, setFormData] = useState("");
 
   return (
     <>
-      <StateContext.Provider
-        value={{ sidenavOpen, setSidenavOpen, isClicked, setIsClicked, formData, setFormData }}
-      >
+      <StateContext.Provider value={{ sidenavOpen, setSidenavOpen, isClicked, setIsClicked }}>
         {children}
       </StateContext.Provider>
     </>

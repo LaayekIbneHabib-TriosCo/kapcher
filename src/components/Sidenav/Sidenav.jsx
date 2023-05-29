@@ -42,52 +42,104 @@ export default function Sidenav() {
         </Header>
 
         <Menu>
-          <StyledLink to="/admin">
-            <Item className={path == "/admin" ? "active" : ""}>
-              <img src={path == "/admin" ? "assets/admin-dark.svg" : "assets/admin.svg"} alt="" />
-              <Label sx={{ display: toggled.display }}>Admin</Label>
-            </Item>
-          </StyledLink>
+          {(path === "/dashboardforadmin" ||
+            path === "/users" ||
+            path === "/livestream" ||
+            path === "/settings") && (
+            <>
+              <StyledLink to="/dashboardforadmin">
+                <Item className={path == "/dashboardforadmin" ? "active" : ""}>
+                  <img
+                    src={
+                      path == "/dashboardforadmin" ? "assets/admin-dark.svg" : "assets/admin.svg"
+                    }
+                    alt=""
+                  />
+                  <Label sx={{ display: toggled.display }}>Dashboard</Label>
+                </Item>
+              </StyledLink>
 
-          <StyledLink to="/packer">
-            <Item className={path == "/packer" ? "active" : ""}>
-              <img
-                src={path == "/packer" ? "assets/packer-dark.svg" : "assets/packer.svg"}
-                alt=""
-              />
-              <Label sx={{ display: toggled.display }}>Packer</Label>
-            </Item>
-          </StyledLink>
+              <StyledLink to="/users">
+                <Item className={path == "/users" ? "active" : ""}>
+                  <img
+                    src={path == "/users" ? "assets/users-dark.svg" : "assets/users.svg"}
+                    alt=""
+                  />
+                  <Label sx={{ display: toggled.display }}>Users</Label>
+                </Item>
+              </StyledLink>
 
-          <StyledLink to="/users">
-            <Item className={path == "/users" ? "active" : ""}>
-              <img src={path == "/users" ? "assets/users-dark.svg" : "assets/users.svg"} alt="" />
-              <Label sx={{ display: toggled.display }}>Users</Label>
-            </Item>
-          </StyledLink>
+              <StyledLink to="/livestream">
+                <Item className={path == "/livestream" ? "active" : ""}>
+                  <img
+                    src={
+                      path == "/livestream"
+                        ? "assets/live-stream-dark.svg"
+                        : "assets/live-stream.svg"
+                    }
+                    alt=""
+                    style={{ width: "2.4rem" }}
+                  />
+                  <Label sx={{ display: toggled.display }}>Live Stream</Label>
+                </Item>
+              </StyledLink>
 
-          <StyledLink to="/livestream">
-            <Item className={path == "/livestream" ? "active" : ""}>
-              <img
-                src={
-                  path == "/livestream" ? "assets/live-stream-dark.svg" : "assets/live-stream.svg"
-                }
-                alt=""
-                style={{ width: "2.4rem" }}
-              />
-              <Label sx={{ display: toggled.display }}>Live</Label>
-            </Item>
-          </StyledLink>
+              <StyledLink to="/settings">
+                <Item className={path == "/settings" ? "active" : ""}>
+                  <img
+                    src={path == "/settings" ? "assets/settings-dark.svg" : "assets/settings.svg"}
+                    alt=""
+                  />
+                  <Label sx={{ display: toggled.display }}>Settings</Label>
+                </Item>
+              </StyledLink>
+            </>
+          )}
 
-          <StyledLink to="/settings">
-            <Item className={path == "/settings" ? "active" : ""}>
-              <img
-                src={path == "/settings" ? "assets/settings-dark.svg" : "assets/settings.svg"}
-                alt=""
-              />
-              <Label sx={{ display: toggled.display }}>Settings</Label>
-            </Item>
-          </StyledLink>
+          {(path === "/dashboardforsecurity" || path === "/livestreamforsecurity") && (
+            <>
+              <StyledLink to="/dashboardforsecurity">
+                <Item className={path == "/dashboardforsecurity" ? "active" : ""}>
+                  <img
+                    src={
+                      path == "/dashboardforsecurity" ? "assets/admin-dark.svg" : "assets/admin.svg"
+                    }
+                    alt=""
+                  />
+                  <Label sx={{ display: toggled.display }}>Dashboard</Label>
+                </Item>
+              </StyledLink>
+
+              <StyledLink to="/livestreamforsecurity">
+                <Item className={path == "/livestreamforsecurity" ? "active" : ""}>
+                  <img
+                    src={
+                      path == "/livestreamforsecurity"
+                        ? "assets/live-stream-dark.svg"
+                        : "assets/live-stream.svg"
+                    }
+                    alt=""
+                    style={{ width: "2.4rem" }}
+                  />
+                  <Label sx={{ display: toggled.display }}>Live Stream</Label>
+                </Item>
+              </StyledLink>
+            </>
+          )}
+
+          {path === "/dashboardforpacker" && (
+            <StyledLink to="/dashboardforpacker">
+              <Item className={path == "/dashboardforpacker" ? "active" : ""}>
+                <img
+                  src={
+                    path == "/dashboardforpacker" ? "assets/packer-dark.svg" : "assets/packer.svg"
+                  }
+                  alt=""
+                />
+                <Label sx={{ display: toggled.display }}>Packers Dashboard</Label>
+              </Item>
+            </StyledLink>
+          )}
         </Menu>
       </Container>
     </>

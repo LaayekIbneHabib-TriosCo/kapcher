@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useStateContext } from "../../../context/ContextProvider";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import "./Style.css";
+import { useNavigate } from "react-router-dom";
 
 const credentials = [
   { role: "admin", name: "Laayek", password: "123" },
@@ -10,29 +11,36 @@ const credentials = [
   { role: "security", name: "Habib", password: "213" },
 ];
 
-export default function Login({ onSubmit }) {
+export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
   const { isClicked, setIsClicked } = useStateContext();
 
-  function handleSubmit(event) {
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-
     const isAdmin = credentials[0].name === username && credentials[0].password === password;
-    const isPacker = credentials[1].name === username && credentials[1].password === password;
-    const isSecurity = credentials[2].name === username && credentials[2].password === password;
-
+    const isSecurity = credentials[1].name === username && credentials[1].password === password;
+    const isPacker = credentials[2].name === username && credentials[2].password === password;
     if (isAdmin) {
-      onSubmit({ isAdmin });
-    } else if (isPacker) {
-      onSubmit({ isPacker });
+      localStorage.setItem("isAdmin", true);
+      navigate("/dashboardforadmin");
     } else if (isSecurity) {
-      onSubmit({ isSecurity });
-    } else {
-      console.log("You're no one");
+      localStorage.setItem("isSecurity", true);
+      navigate("/dashboardforsecurity");
+    } else if (isPacker) {
+      localStorage.setItem("isPacker", true);
+      navigate("/dashboardforpacker");
     }
-  }
+  };
+
+  useEffect(() => {
+    let login = localStorage.getItem("isAdmin");
+    if (login) {
+      navigate("/dashboardforadmin");
+    }
+  });
 
   return (
     <>
