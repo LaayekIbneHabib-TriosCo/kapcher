@@ -7,9 +7,10 @@ import TitleBar from "../../components/TitleBar/TitleBar";
 import Rows from "../../components/Rows/Rows";
 import { Window } from "./Style";
 import Data from "./Data/Data";
+import Form from "../../components/Form/Form";
 
 export default function Users() {
-  const { sidenavOpen } = useStateContext();
+  const { isClicked, setIsClicked, sidenavOpen } = useStateContext();
 
   const theme = useTheme();
 
@@ -29,7 +30,8 @@ export default function Users() {
           </Grid>
           <Window sx={{ width: toggled.window }}>
             <TitleBar />
-            <Rows data={Data} />
+            {isClicked && <Rows click={() => setIsClicked((prev) => !prev)} data={Data} />}
+            {!isClicked && <Form click={() => setIsClicked((prev) => !prev)} />}
           </Window>
         </Grid>
       </Box>

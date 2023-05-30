@@ -9,7 +9,7 @@ import MasterTable from "../../components/Table/Table";
 import { columns } from "./Data/Data";
 import { rows } from "./Data/Data";
 import { Form, Input } from "./Style";
-import PrimaryButton from "../../components/Button/Button";
+import { SecondaryButton } from "../../components/Buttons/Buttons";
 
 import { useState } from "react";
 
@@ -70,7 +70,7 @@ export default function Packer() {
                 label="TRACKING ID"
                 variant="filled"
               />
-              <PrimaryButton envoke={handleSearch} value="SUBMIT" />
+              <SecondaryButton click={handleSearch} value="Submit" />
             </Form>
             <MasterTable columns={columns} rows={data} />
           </Window>

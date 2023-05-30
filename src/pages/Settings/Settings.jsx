@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { useStateContext } from "../../context/ContextProvider";
 import Sidenav from "../../components/Sidenav/Sidenav";
+import { Window } from "./Style";
 
 export default function Settings() {
   const { sidenavOpen } = useStateContext();
@@ -24,9 +25,9 @@ export default function Settings() {
           <Grid item sx={{ width: toggled.sidenav }}>
             <Sidenav />
           </Grid>
-          <Grid item sx={{ width: toggled.window }}>
+          <Window item sx={{ width: toggled.window }}>
             <Typography variant="h1">Settings dashboard</Typography>
-          </Grid>
+          </Window>
         </Grid>
       </Box>
     </>

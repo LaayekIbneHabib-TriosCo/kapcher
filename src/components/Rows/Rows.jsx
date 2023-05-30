@@ -1,8 +1,9 @@
-import { TableContainer, Head, Wrapper, Row, Col, Delete, Edit, Body, AddUser } from "./Style";
+import { AddButton } from "../Buttons/Buttons";
+import { TableContainer, Head, Wrapper, Row, Col, Delete, Edit, Body } from "./Style";
 
 import React from "react";
 
-export default function Rows({ data }) {
+export default function Rows({ click, data }) {
   return (
     <Wrapper>
       <TableContainer>
@@ -33,10 +34,7 @@ export default function Rows({ data }) {
             </Edit>
           </Body>
         ))}
-        <AddUser onClick={() => alert("Why did you click me?")}>
-          <p>Add User</p>
-          <img src="assets/plus.svg" alt="" />
-        </AddUser>
+        <AddButton click={click} value="Add user" />
       </TableContainer>
     </Wrapper>
   );

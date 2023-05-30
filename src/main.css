@@ -20,8 +20,6 @@ html {
   overflow-y: scroll;
 }
 
-h1 {
-  font-size: 2rem !important;
-  text-align: center !important;
-  font-weight: 500 !important;
+body::-webkit-scrollbar {
+  display: none;
 }

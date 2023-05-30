@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import "./Style.css";
 import { useNavigate } from "react-router-dom";
+import { PrimaryButton } from "../../../components/Buttons/Buttons";
 
 const credentials = [
   { role: "admin", name: "Admin", password: "123" },
@@ -121,7 +122,7 @@ export default function Login() {
               <input type="checkbox" />
               <label htmlFor="checkbox">Remember me</label>
             </div>
-            <button type="submit">Login</button>
+            <PrimaryButton value="submit" />
           </form>
         </Grid>
         <Grid

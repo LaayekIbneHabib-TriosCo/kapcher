@@ -17,14 +17,12 @@ export const Head = styled.div`
   display: flex;
   gap: 30px;
   padding: 10px 0 10px 0;
-  margin: 0 2rem 0 2rem;
 `;
 
 export const Body = styled.div`
   display: flex;
   gap: 30px;
   padding: 10px 0 10px 0;
-  margin: 0 2rem 0 2rem;
 `;
 
 export const Row = styled.ul`
@@ -84,23 +82,5 @@ export const Edit = styled.button`
 
   img {
     border-radius: 6px;
-  }
-`;
-
-export const AddUser = styled.button`
-  background: rgba(219, 222, 222);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  border: 0;
-  padding: 0.75rem 3rem 0.75rem 3rem;
-  border-radius: 1rem;
-  gap: 2rem;
-  cursor: pointer;
-  margin: 3rem 0 0 2rem;
-
-  p {
-    font-size: 1.35rem;
-    font-weight: 500;
   }
 `;

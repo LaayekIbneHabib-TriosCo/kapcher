@@ -10,10 +10,11 @@ import MasterTable from "../../components/Table/Table";
 import Search from "../../components/Search/Search";
 import { StartDate } from "../../components/Date/Date";
 import { EndDate } from "../../components/Date/Date";
-import PrimaryButton from "../../components/Button/Button";
 import { Filters, Filter } from "./Style";
 import { columns } from "./Data/Data";
 import { rows } from "./Data/Data";
+
+import { SecondaryButton } from "../../components/Buttons/Buttons";
 
 export default function Dashboard() {
   const { sidenavOpen } = useStateContext();
@@ -48,7 +49,7 @@ export default function Dashboard() {
                 <EndDate />
               </Filter>
               <Filter item>
-                <PrimaryButton value="Apply filter" />
+                <SecondaryButton value="Apply filter" />
               </Filter>
             </Filters>
             <MasterTable columns={columns} rows={rows} />
