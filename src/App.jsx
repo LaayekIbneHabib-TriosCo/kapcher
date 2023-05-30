@@ -17,6 +17,7 @@ export default function App() {
     <>
       <Routes>
         <Route path="*" element={<h1>404</h1>} />
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboardforadmin" element={<ProtectedRoutes Component={Dashboard} />} />
         <Route path="/dashboardforsecurity" element={<ProtectedRoutes Component={Dashboard} />} />

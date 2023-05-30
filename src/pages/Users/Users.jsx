@@ -1,9 +1,12 @@
 import { useTheme } from "@mui/material/styles";
-// import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { useStateContext } from "../../context/ContextProvider";
 import Sidenav from "../../components/Sidenav/Sidenav";
+import TitleBar from "../../components/TitleBar/TitleBar";
+import Rows from "../../components/Rows/Rows";
+import { Window } from "./Style";
+import Data from "./Data/Data";
 
 export default function Users() {
   const { sidenavOpen } = useStateContext();
@@ -24,7 +27,10 @@ export default function Users() {
           <Grid item sx={{ width: toggled.sidenav }}>
             <Sidenav />
           </Grid>
-          <Grid item sx={{ width: toggled.window }}></Grid>
+          <Window sx={{ width: toggled.window }}>
+            <TitleBar />
+            <Rows data={Data} />
+          </Window>
         </Grid>
       </Box>
     </>

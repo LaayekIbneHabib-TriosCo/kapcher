@@ -6,9 +6,9 @@ import "./Style.css";
 import { useNavigate } from "react-router-dom";
 
 const credentials = [
-  { role: "admin", name: "Laayek", password: "123" },
-  { role: "packer", name: "Ibne", password: "321" },
-  { role: "security", name: "Habib", password: "213" },
+  { role: "admin", name: "Admin", password: "123" },
+  { role: "packer", name: "Packer", password: "321" },
+  { role: "security", name: "Security", password: "213" },
 ];
 
 export default function Login() {

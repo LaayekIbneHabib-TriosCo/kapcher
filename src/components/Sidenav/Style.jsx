@@ -5,12 +5,13 @@ import theme from "../../theme/theme";
 
 export const Container = styled(Box)(({ theme }) => ({
   background: theme.custom.palette.primary.gradient,
-  height: "100%",
+  height: "120%",
   position: "fixed",
   borderTopRightRadius: "3rem",
   borderBottomRightRadius: "3rem",
   boxShadow: "0 1rem 1.5rem rgba(0, 0, 0, 0.5)",
   zIndex: "99",
+  overflowX: "scroll",
 }));
 
 export const Header = styled(Box)(() => ({
@@ -58,6 +59,7 @@ export const Item = styled(Box)(() => ({
   padding: "1.8rem",
   cursor: "pointer",
   color: "white",
+  minHeight: "6rem",
 
   "&.active": {
     background: theme.custom.palette.tertiary.gradient,
