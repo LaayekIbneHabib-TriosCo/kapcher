@@ -30,8 +30,21 @@ export default function Users() {
           </Grid>
           <Window sx={{ width: toggled.window }}>
             <TitleBar />
-            {isClicked && <Rows click={() => setIsClicked((prev) => !prev)} data={Data} />}
-            {!isClicked && <Form click={() => setIsClicked((prev) => !prev)} />}
+            {isClicked && (
+              <Rows
+                click={() => setIsClicked((prev) => !prev)}
+                title={["Serial Number", "User Name", "Email Id", "Mobile Number", "Role"]}
+                data={Data}
+              />
+            )}
+            {!isClicked && (
+              <Form
+                click={() => setIsClicked((prev) => !prev)}
+                purpose="Register User"
+                input={["Name", "Mobile number", "Email Address", "Password"]}
+                dropdown={["Select your role", "Admin", "Security", "Packer"]}
+              />
+            )}
           </Window>
         </Grid>
       </Box>

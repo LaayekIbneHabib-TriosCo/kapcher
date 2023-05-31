@@ -3,28 +3,26 @@ import { TableContainer, Head, Wrapper, Row, Col, Delete, Edit, Body } from "./S
 
 import React from "react";
 
-export default function Rows({ click, data }) {
+export default function Rows({ click, title, data }) {
   return (
     <Wrapper>
       <TableContainer>
         <Head>
           <Row style={{ background: 0 }}>
-            <Col>Serial number</Col>
-            <Col>User name</Col>
-            <Col>Email Id</Col>
-            <Col>Mobile Number</Col>
-            <Col>Role</Col>
+            {title?.map((item, index) => (
+              <Col key={index}>{item}</Col>
+            ))}
           </Row>
         </Head>
 
-        {data.map((item) => (
+        {data.map((item, index) => (
           <Body>
-            <Row key={item.id}>
+            <Row key={index}>
               <Col>{item.id}</Col>
-              <Col>{item.name}</Col>
-              <Col>{item.email}</Col>
-              <Col>{item.mobile}</Col>
-              <Col>{item.role}</Col>
+              <Col>{item.name || item.cameraName || item.workstationName}</Col>
+              <Col>{item.email || item.RTSP || item.cameraName}</Col>
+              <Col>{item.mobile || item.startTime || item.workstationType}</Col>
+              <Col>{item.role || item.stopTime}</Col>
             </Row>
             <Delete>
               <img src="assets/delete.svg" />
@@ -34,8 +32,8 @@ export default function Rows({ click, data }) {
             </Edit>
           </Body>
         ))}
-        <AddButton click={click} value="Add user" />
       </TableContainer>
+      <AddButton click={click} value="Add user" />
     </Wrapper>
   );
 }

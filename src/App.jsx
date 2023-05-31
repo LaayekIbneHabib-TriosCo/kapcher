@@ -8,8 +8,8 @@ import Packer from "./pages/Packer/Packer";
 import Users from "./pages/Users/Users";
 import LiveStream from "./pages/LiveStream/LiveStream";
 import Settings from "./pages/Settings/Settings";
-import Cameras from "./pages/Settings/Cameras/Cameras";
-import Workstations from "./pages/Settings/Workstations/Workstations";
+import Camera from "./pages/Settings/Camera/Camera";
+import Workstation from "./pages/Settings/Workstation/Workstation";
 import ProtectedRoutes from "./pages/ProtectedRoutes/ProtectedRoutes";
 
 export default function App() {
@@ -26,10 +26,10 @@ export default function App() {
         <Route path="/livestream" element={<ProtectedRoutes Component={LiveStream} />} />
         <Route path="/livestreamforsecurity" element={<ProtectedRoutes Component={LiveStream} />} />
         <Route path="/settings" element={<ProtectedRoutes Component={Settings} />} />
-        <Route path="/settings/cameras" element={<ProtectedRoutes Component={Cameras} />} />
+        <Route path="/settings/cameras" element={<ProtectedRoutes Component={Camera} />} />
         <Route
           path="/settings/workstations"
-          element={<ProtectedRoutes Component={Workstations} />}
+          element={<ProtectedRoutes Component={Workstation} />}
         />
         <Route path="/video" element={<ProtectedRoutes Component={Video} />} />
       </Routes>

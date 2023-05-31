@@ -23,3 +23,7 @@ html {
 body::-webkit-scrollbar {
   display: none;
 }
+
+::-webkit-scrollbar {
+  all: unset;
+}

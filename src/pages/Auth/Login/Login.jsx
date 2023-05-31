@@ -83,7 +83,7 @@ export default function Login() {
           }}
         >
           <div className="auth-logo">
-            <img src="assets/new-logo.png" width="100%" alt="" />
+            <img src="assets/brand-logo.png" width="100%" alt="" />
           </div>
           <form onSubmit={handleSubmit} className="auth-form" action="POST">
             <div>

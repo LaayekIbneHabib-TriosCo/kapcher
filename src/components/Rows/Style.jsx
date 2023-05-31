@@ -1,16 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  margin-top: 7.5rem;
-  padding-bottom: 7.5rem;
-  overflow-x: scroll;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  margin-top: 5rem;
 `;
 
 export const TableContainer = styled.div`
-  margin: 1rem;
+  overflow-x: scroll;
 `;
 
 export const Head = styled.div`

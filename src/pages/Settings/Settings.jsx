@@ -1,10 +1,23 @@
 import { useTheme } from "@mui/material/styles";
-import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { useStateContext } from "../../context/ContextProvider";
 import Sidenav from "../../components/Sidenav/Sidenav";
 import { Window } from "./Style";
+import BasicTabs from "../../components/Tabs/Tabs";
+import Camera from "./Camera/Camera";
+import Workstation from "./Workstation/Workstation";
+
+const tabs = [
+  {
+    label: "Camera",
+    Component: <Camera />,
+  },
+  {
+    label: "Workstation",
+    Component: <Workstation />,
+  },
+];
 
 export default function Settings() {
   const { sidenavOpen } = useStateContext();
@@ -26,7 +39,7 @@ export default function Settings() {
             <Sidenav />
           </Grid>
           <Window item sx={{ width: toggled.window }}>
-            <Typography variant="h1">Settings dashboard</Typography>
+            <BasicTabs tabs={tabs} />
           </Window>
         </Grid>
       </Box>
